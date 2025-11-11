@@ -23,35 +23,7 @@
     </a>
   </tr>
 </table>
-
-<br>
-
-# 🎯 Featured Projects
-
-### ✨ [UntarX Website](https://untarx.com)
-A website used as a promotional medium for a mobile application called **UntarX**.  
-Website used to showcase the advantages and functionality of the **UntarX** mobile application.
-
-### 💊 [PharmaCheck](https://pharma-check-wheat.vercel.app)
-A health information website integrated with the **Indonesian Ministry of Health’s BPOM API**.  
-Designed to help professionals and students verify **medicines and medical devices** legally distributed in Indonesia.
-
-### 🏔️ [WayToRinjani](https://waytorinjani.com)
-A website used as a medium for offering international services for climbing Mount Rinjani.  
-Website help to providing tours and great experiences to see Mount Rinjani in Lombok.
-
-<h2></h2>
-
-
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hanseehhh/hanseehhh/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/hanseehhh/hanseehhh/output/github-snake.svg" />
-    <img alt="github-snake" src="https://raw.githubusercontent.com/hanseehhh/hanseehhh/output/github-snake.svg" />
-  </picture>
-</div>
-
+      
 ## Getting Started
 
 First, run the development server:

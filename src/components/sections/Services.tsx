@@ -131,27 +131,27 @@ const cardVariants = {
 
 export function Services() {
   return (
-    <section id="services" className="flex min-h-screen flex-col justify-center px-4 py-16 sm:px-8 lg:px-16">
+    <section id="services" className="relative flex min-h-screen flex-col justify-center overflow-hidden px-4 py-16 sm:px-8 lg:px-16">
       <div className="mx-auto w-full max-w-7xl">
         <ScrollReveal direction="none">
-          <div className="mb-16 text-center">
-            <p
-              className="mb-3 text-xs font-semibold uppercase tracking-widest text-zinc-400"
+          <div className="relative mb-16 text-center">
+            <span
+              className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-[5rem] font-black uppercase leading-none tracking-widest text-zinc-100 sm:text-[8rem] lg:text-[10rem]"
               style={{ fontFamily: HELVETICA }}
+              aria-hidden
             >
-              My Specialization
-            </p>
+              SERVICES
+            </span>
 
-            <div className="relative inline-block max-w-full overflow-hidden">
-              <span
-                className="pointer-events-none absolute inset-0 flex items-center justify-center text-[4rem] font-black uppercase leading-none tracking-widest text-zinc-100 select-none sm:text-[6rem]"
+            <div className="relative z-10 py-8">
+              <p
+                className="mb-3 text-xs font-semibold uppercase tracking-widest text-zinc-400"
                 style={{ fontFamily: HELVETICA }}
-                aria-hidden
               >
-                SERVICES
-              </span>
+                My Specialization
+              </p>
               <h2
-                className="relative z-10 text-4xl font-black text-zinc-900 sm:text-5xl"
+                className="text-4xl font-black text-zinc-900 sm:text-5xl"
                 style={{ fontFamily: HELVETICA }}
               >
                 Services <span className="text-zinc-400">I Provide</span>

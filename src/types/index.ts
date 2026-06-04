@@ -6,6 +6,7 @@ export interface Project {
   href?: string;
   repo?: string;
   featured?: boolean;
+  image?: string;
 }
 
 export interface Skill {

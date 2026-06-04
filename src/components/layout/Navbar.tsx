@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/constants";
 import { useScrollProgress, useActiveSection } from "@/hooks/useScrollProgress";
@@ -74,12 +75,18 @@ export function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className={cn(
-          "fixed top-5 left-6 z-40 font-black text-sm tracking-widest text-zinc-900 uppercase transition-opacity duration-300",
+          "fixed top-4 left-6 z-40 transition-opacity duration-300",
           scrolled ? "opacity-100" : "opacity-60"
         )}
-        style={{ fontFamily: HELVETICA }}
       >
-        hans<span className="text-zinc-400">.</span>dev
+        <Image
+          src="/icon/logo_black.png"
+          alt="hans.dev"
+          width={140}
+          height={56}
+          className="object-contain"
+          priority
+        />
       </motion.a>
 
       <motion.button

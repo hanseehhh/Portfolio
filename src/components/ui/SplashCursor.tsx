@@ -518,9 +518,11 @@ export function SplashCursor() {
       p.deltaX=0; p.deltaY=0; p.color=genColor();
     }
 
+    const OFFSET_X = 0.06;
+    const OFFSET_Y = 0.06;
     function updateMove(p: PointerData, x: number, y: number, color: {r:number;g:number;b:number}) {
       p.prevTexcoordX=p.texcoordX; p.prevTexcoordY=p.texcoordY;
-      p.texcoordX=x/canvas.width; p.texcoordY=1-y/canvas.height;
+      p.texcoordX=x/canvas.width + OFFSET_X; p.texcoordY=1-y/canvas.height - OFFSET_Y;
       const ar=canvas.width/canvas.height;
       p.deltaX=(p.texcoordX-p.prevTexcoordX)*(ar<1?ar:1);
       p.deltaY=(p.texcoordY-p.prevTexcoordY)/(ar>1?ar:1);
@@ -528,7 +530,7 @@ export function SplashCursor() {
       p.color=color;
     }
 
-    const onMouseDown = (_e: MouseEvent) => { /* click effect disabled */ };
+    const onMouseDown = () => { /* click effect disabled */ };
     const onMouseMove = (e: MouseEvent) => {
       const color = firstMove ? pointers[0].color : genColor();
       firstMove=true;

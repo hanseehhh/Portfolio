@@ -47,7 +47,7 @@ export function Hero() {
         />
 
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex items-end" style={{ gap: "clamp(3px, 1.2vw, 14px)" }}>
+          <div className="flex items-end" style={{ gap: "clamp(5px, 2vw, 22px)" }}>
             {LETTERS.map(({ char, bg, shadow, rotate, light }, i) => (
               <motion.div
                 key={i}
@@ -61,9 +61,9 @@ export function Hero() {
                 }}
                 style={{
                   backgroundColor: bg,
-                  boxShadow: `clamp(1px, 0.2vw, 3px) clamp(1px, 0.2vw, 3px) 0 ${shadow}`,
-                  width: "clamp(28px, 4.5vw, 58px)",
-                  height: "clamp(38px, 6vw, 78px)",
+                  boxShadow: `clamp(1px, 0.2vw, 4px) clamp(1px, 0.2vw, 4px) 0 ${shadow}`,
+                  width: "clamp(40px, 6.5vw, 80px)",
+                  height: "clamp(54px, 8.5vw, 106px)",
                 }}
                 className="flex items-center justify-center rounded-[3px]"
               >
@@ -71,7 +71,7 @@ export function Hero() {
                   className="font-black leading-none"
                   style={{
                     fontFamily: "Georgia, 'Times New Roman', serif",
-                    fontSize: "clamp(16px, 2.8vw, 36px)",
+                    fontSize: "clamp(22px, 4vw, 52px)",
                     color: light ? "#18181b" : "#fafafa",
                   }}
                 >

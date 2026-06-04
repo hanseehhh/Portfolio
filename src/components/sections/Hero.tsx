@@ -89,10 +89,10 @@ export function Hero() {
         className="mt-6 flex flex-col items-center gap-8 text-center"
       >
         <p
-          className="text-sm tracking-[0.2em] text-zinc-400 uppercase"
+          className="text-sm tracking-[0.2em] text-zinc-400"
           style={{ fontFamily: HELVETICA }}
         >
-          Full Stack Developer &amp; System Design Mobile x Websites
+          Full Stack Developer &amp; UI/UX Designer
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">

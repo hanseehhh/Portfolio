@@ -1,7 +1,9 @@
-"use client";
+﻿'use client';
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ScrollReveal } from "@/components/ui";
+import { SKILLS } from "@/lib/constants";
 
 const HELVETICA = "Helvetica, 'Helvetica Neue', Arial, sans-serif";
 
@@ -106,6 +108,14 @@ const SERVICES = [
   },
 ];
 
+const TOOLS = [
+  { label: "Figma",       src: "/tools/figma.png",     size: 22 },
+  { label: "Adobe Illus", src: "/tools/adobeislu.png", size: 32 },
+  { label: "Canva",       src: "/tools/canva.png",     size: 32 },
+  { label: "VSCode",      src: "/tools/vsc.png",       size: 32 },
+  { label: "GitHub",      src: "/tools/github.png",    size: 32 },
+];
+
 const cardVariants = {
   hidden: { opacity: 0, y: 32 },
   visible: (i: number) => ({
@@ -121,7 +131,7 @@ const cardVariants = {
 
 export function Services() {
   return (
-    <section id="services" className="flex min-h-screen flex-col justify-center px-8 py-24 sm:px-16">
+    <section id="services" className="flex min-h-screen flex-col justify-center px-4 py-16 sm:px-8 lg:px-16">
       <div className="mx-auto w-full max-w-7xl">
         <ScrollReveal direction="none">
           <div className="mb-16 text-center">
@@ -132,9 +142,9 @@ export function Services() {
               My Specialization
             </p>
 
-            <div className="relative inline-block">
+            <div className="relative inline-block max-w-full overflow-hidden">
               <span
-                className="pointer-events-none absolute inset-0 flex items-center justify-center text-[5rem] font-black uppercase leading-none tracking-widest text-zinc-100 select-none sm:text-[7rem]"
+                className="pointer-events-none absolute inset-0 flex items-center justify-center text-[4rem] font-black uppercase leading-none tracking-widest text-zinc-100 select-none sm:text-[6rem]"
                 style={{ fontFamily: HELVETICA }}
                 aria-hidden
               >
@@ -157,7 +167,7 @@ export function Services() {
               custom={i}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
+              viewport={{ once: false, margin: "-60px" }}
               variants={cardVariants}
               whileHover={{ y: -4 }}
               transition={{ type: "spring", stiffness: 320, damping: 38 }}
@@ -186,6 +196,78 @@ export function Services() {
             </motion.div>
           ))}
         </div>
+
+        <ScrollReveal delay={0.2}>
+          <div className="mt-16 flex flex-col gap-10 lg:flex-row lg:items-start">
+            {(["frontend", "backend"] as const).map((cat, ci) => {
+              const items = SKILLS.filter((s) => s.category === cat);
+              return (
+                <div key={cat} className="flex flex-1 flex-col gap-4">
+                  <p
+                    className="text-xs font-semibold uppercase tracking-widest text-zinc-400"
+                    style={{ fontFamily: HELVETICA }}
+                  >
+                    {cat}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {items.map((skill, i) => (
+                      <motion.span
+                        key={skill.name}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{
+                          delay: ci * 0.1 + i * 0.06,
+                          duration: 0.4,
+                          ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+                        }}
+                        className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-1.5 font-mono text-xs text-zinc-600"
+                      >
+                        {skill.name}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+
+            <div className="flex flex-1 flex-col gap-4">
+              <p
+                className="text-xs font-semibold uppercase tracking-widest text-zinc-400"
+                style={{ fontFamily: HELVETICA }}
+              >
+                Tools I Use
+              </p>
+              <div className="flex flex-wrap gap-4">
+                {TOOLS.map(({ label, src, size }, i) => (
+                  <motion.div
+                    key={label}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{
+                      delay: i * 0.08,
+                      duration: 0.5,
+                      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+                    }}
+                    whileHover={{ y: -3 }}
+                    className="flex flex-col items-center gap-2"
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-200 bg-zinc-50 shadow-sm transition-shadow hover:shadow-md">
+                      <Image src={src} alt={label} width={size} height={size} className="object-contain" />
+                    </div>
+                    <span
+                      className="text-[10px] font-medium tracking-wide text-zinc-400"
+                      style={{ fontFamily: HELVETICA }}
+                    >
+                      {label}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-"use client";
+﻿'use client';
 
 import { motion } from "framer-motion";
 import { ScrollReveal, AnimatedText } from "@/components/ui";
@@ -42,7 +42,7 @@ export function Skills() {
                         key={skill.name}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         transition={{ delay: i * 0.05 + ci * 0.1, duration: 0.3 }}
                         whileHover={{ scale: 1.05 }}
                         className="rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-2 font-mono text-sm text-zinc-600 transition-colors hover:border-zinc-300 hover:text-zinc-900"

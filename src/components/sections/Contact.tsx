@@ -1,4 +1,4 @@
-"use client";
+﻿'use client';
 
 import { motion } from "framer-motion";
 import { ScrollReveal, AnimatedText, MagneticButton } from "@/components/ui";
@@ -23,7 +23,7 @@ export function Contact() {
         <ScrollReveal delay={0.2}>
           <p className="max-w-md text-base leading-relaxed text-zinc-500">
             I&apos;m currently open to new opportunities. Whether you have a project in mind,
-            want to collaborate, or just want to say hi — my inbox is always open.
+            want to collaborate, or just want to say hi â€” my inbox is always open.
           </p>
         </ScrollReveal>
 
@@ -34,7 +34,7 @@ export function Contact() {
             className="bg-zinc-900 text-white hover:bg-zinc-700"
             strength={0.4}
           >
-            Say Hello →
+            Say Hello â†’
           </MagneticButton>
         </ScrollReveal>
 

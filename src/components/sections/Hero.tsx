@@ -1,4 +1,4 @@
-"use client";
+﻿'use client';
 
 import { motion } from "framer-motion";
 import { BlurText, MagneticButton, SplitText } from "@/components/ui";
@@ -47,12 +47,13 @@ export function Hero() {
         />
 
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex items-end" style={{ gap: "1.2vw" }}>
+          <div className="flex items-end" style={{ gap: "clamp(3px, 1.2vw, 14px)" }}>
             {LETTERS.map(({ char, bg, shadow, rotate, light }, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 60 }}
-                animate={{ opacity: 1, y: 0, rotate }}
+                whileInView={{ opacity: 1, y: 0, rotate }}
+                viewport={{ once: false, margin: "-80px" }}
                 transition={{
                   delay: 0.15 + i * 0.07,
                   duration: 0.55,
@@ -60,9 +61,9 @@ export function Hero() {
                 }}
                 style={{
                   backgroundColor: bg,
-                  boxShadow: `0.2vw 0.2vw 0 ${shadow}`,
-                  width: "4.5vw",
-                  height: "6vw",
+                  boxShadow: `clamp(1px, 0.2vw, 3px) clamp(1px, 0.2vw, 3px) 0 ${shadow}`,
+                  width: "clamp(28px, 4.5vw, 58px)",
+                  height: "clamp(38px, 6vw, 78px)",
                 }}
                 className="flex items-center justify-center rounded-[3px]"
               >
@@ -70,7 +71,7 @@ export function Hero() {
                   className="font-black leading-none"
                   style={{
                     fontFamily: "Georgia, 'Times New Roman', serif",
-                    fontSize: "2.8vw",
+                    fontSize: "clamp(16px, 2.8vw, 36px)",
                     color: light ? "#18181b" : "#fafafa",
                   }}
                 >
@@ -84,7 +85,8 @@ export function Hero() {
 
       <motion.div
         initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-80px" }}
         transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
         className="mt-6 flex flex-col items-center gap-8 text-center"
       >

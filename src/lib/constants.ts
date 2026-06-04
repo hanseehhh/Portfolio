@@ -1,10 +1,10 @@
 import type { NavLink, Project, Skill, SocialLink } from "@/types";
 
 export const NAV_LINKS: NavLink[] = [
+  { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -49,7 +49,12 @@ export const SKILLS: Skill[] = [
   { name: "Next.js", category: "frontend" },
   { name: "Tailwind CSS", category: "frontend" },
   { name: "Framer Motion", category: "frontend" },
+  { name: "ReactBits", category: "frontend" },
+  { name: "Dart", category: "frontend" },
   { name: "Node.js", category: "backend" },
+  { name: "Next.js", category: "backend" },
+  { name: "MySQL", category: "backend" },
+  { name: "PHP", category: "backend" },
   { name: "PostgreSQL", category: "backend" },
   { name: "Python", category: "backend" },
   { name: "Git", category: "tools" },

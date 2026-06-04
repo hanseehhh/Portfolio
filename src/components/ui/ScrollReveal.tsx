@@ -1,4 +1,4 @@
-"use client";
+﻿'use client';
 
 import { motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -39,7 +39,7 @@ export function ScrollReveal({
   className,
   delay = 0,
   direction = "up",
-  once = true,
+  once = false,
 }: ScrollRevealProps) {
   return (
     <motion.div

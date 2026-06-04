@@ -1,4 +1,4 @@
-"use client";
+﻿'use client';
 
 import { motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -36,7 +36,7 @@ export function AnimatedText({
   className,
   delay = 0,
   duration = 0.5,
-  once = true,
+  once = false,
   variant = "word",
 }: AnimatedTextProps) {
   if (variant === "fade") {

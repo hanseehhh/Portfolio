@@ -1,4 +1,4 @@
-"use client";
+﻿'use client';
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -26,7 +26,8 @@ export function BlurText({
         <motion.span
           key={i}
           initial={{ opacity: 0, filter: "blur(12px)", y: 8 }}
-          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          viewport={{ once: false, margin: "-40px" }}
           transition={{
             delay: delay + i * 0.1,
             duration,

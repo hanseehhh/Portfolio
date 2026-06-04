@@ -1,4 +1,4 @@
-"use client";
+﻿'use client';
 
 import { useEffect, useRef, CSSProperties } from "react";
 import gsap from "gsap";
@@ -49,15 +49,22 @@ export function SplitText({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) return;
-        observer.disconnect();
-        gsap.to(targets, {
-          ...toRef.current,
-          duration,
-          ease,
-          stagger: delay / 1000,
-          onComplete: onCompleteRef.current,
-        });
+        if (entry.isIntersecting) {
+          gsap.to(targets, {
+            ...toRef.current,
+            duration,
+            ease,
+            stagger: delay / 1000,
+            onComplete: onCompleteRef.current,
+          });
+        } else {
+          gsap.to(targets, {
+            ...fromRef.current,
+            duration: duration * 0.6,
+            ease: "power2.in",
+            stagger: delay / 2000,
+          });
+        }
       },
       { threshold, rootMargin }
     );

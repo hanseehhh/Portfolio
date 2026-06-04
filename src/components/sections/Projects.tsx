@@ -1,4 +1,4 @@
-"use client";
+﻿'use client';
 
 import { motion } from "framer-motion";
 import { ScrollReveal, AnimatedText } from "@/components/ui";
@@ -32,7 +32,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 className="font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-900"
                 aria-label="GitHub repo"
               >
-                repo ↗
+                repo â†—
               </a>
             )}
             {project.href && (
@@ -43,7 +43,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 className="font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-900"
                 aria-label="Live site"
               >
-                live ↗
+                live â†—
               </a>
             )}
           </div>

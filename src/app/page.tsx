@@ -1,4 +1,4 @@
-import { Hero, About, Services, Projects, Skills, Contact } from "@/components/sections";
+import { Hero, About, Services, Projects, Contact } from "@/components/sections";
 import { SectionDivider } from "@/components/ui";
 
 export default function Home() {
@@ -10,8 +10,6 @@ export default function Home() {
       <Services />
       <SectionDivider />
       <Projects />
-      <SectionDivider />
-      <Skills />
       <SectionDivider />
       <Contact />
     </>

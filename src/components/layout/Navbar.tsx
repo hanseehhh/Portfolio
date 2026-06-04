@@ -1,4 +1,4 @@
-"use client";
+﻿'use client';
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
@@ -161,7 +161,7 @@ export function Navbar() {
                 className="self-end text-[11px] tracking-[0.2em] text-zinc-400 uppercase hover:text-zinc-900 transition-colors duration-200"
                 style={{ fontFamily: HELVETICA }}
               >
-                Close ×
+                Close Ã—
               </button>
 
               <motion.nav

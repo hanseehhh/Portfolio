@@ -72,11 +72,12 @@ export function About() {
   return (
     <section id="about" className="flex min-h-screen flex-col justify-center px-4 py-16 sm:px-8 lg:px-16">
       <ScrollReveal>
-        <div className="mx-auto w-full max-w-6xl">
-          <div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-14">
+        <div className="mx-auto w-full max-w-[1400px]">
+          <div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-10 lg:gap-16">
+
             <ScrollReveal direction="left" className="shrink-0">
               <div
-                className="relative mx-auto h-64 w-64 overflow-hidden sm:h-80 sm:w-80 md:h-96 md:w-96"
+                className="relative h-72 w-72 overflow-hidden lg:h-80 lg:w-80"
                 style={{
                   clipPath: STAR_CLIP,
                   filter: "drop-shadow(0px 12px 40px rgba(235, 228, 215, 0.95))",
@@ -86,43 +87,45 @@ export function About() {
               </div>
             </ScrollReveal>
 
-            <div className="flex flex-1 flex-col gap-5 text-center md:text-left">
-              <ScrollReveal direction="right">
-                <h2 className="text-4xl font-black leading-tight text-zinc-900 sm:text-5xl lg:text-6xl" style={{ fontFamily: HELVETICA }}>
-                  Hello!<br />I&apos;m Hans Thobie Sachio
+            <ScrollReveal direction="up" className="flex-1">
+              <div className="flex flex-col gap-5">
+                <h2
+                  className="text-4xl font-black leading-snug text-zinc-900 sm:text-5xl"
+                  style={{ fontFamily: HELVETICA }}
+                >
+                  Hello!
+                  <br />
+                  I&apos;m Hans Thobie Sachio
                 </h2>
-              </ScrollReveal>
-              <ScrollReveal delay={0.1}>
-                <p className="text-base leading-relaxed text-zinc-500 sm:text-lg" style={{ fontFamily: HELVETICA }}>
+                <p className="text-base leading-relaxed text-zinc-500" style={{ fontFamily: HELVETICA }}>
                   An Information Technology student exploring the intersection of technology and design.
                 </p>
-              </ScrollReveal>
-              <ScrollReveal delay={0.15}>
-                <p className="text-base leading-relaxed text-zinc-500 sm:text-lg" style={{ fontFamily: HELVETICA }}>
+                <p className="text-base leading-relaxed text-zinc-500" style={{ fontFamily: HELVETICA }}>
                   I explore how technology and design can intersect to create meaningful user experiences.
                   To me, design is more than just aesthetics — it&apos;s a tool to solve problems, tell stories,
                   and craft products that are not only functional but also emotionally engaging and visually compelling.
                 </p>
-              </ScrollReveal>
+              </div>
+            </ScrollReveal>
 
-              <ScrollReveal delay={0.2}>
-                <div className="flex flex-wrap justify-center gap-3 md:justify-start">
-                  {SOCIALS.map(({ label, href, icon }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 rounded-md border border-zinc-200 px-4 py-2.5 text-sm text-zinc-600 transition-colors hover:border-zinc-400 hover:text-zinc-900"
-                      style={{ fontFamily: HELVETICA }}
-                    >
-                      {icon}
-                      {label}
-                    </a>
-                  ))}
-                </div>
-              </ScrollReveal>
-            </div>
+            <ScrollReveal direction="right" delay={0.2} className="shrink-0">
+              <div className="flex flex-col gap-3">
+                {SOCIALS.map(({ label, href, icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 rounded-md border border-zinc-200 px-4 py-2.5 text-sm text-zinc-600 transition-colors hover:border-zinc-400 hover:text-zinc-900"
+                    style={{ fontFamily: HELVETICA }}
+                  >
+                    {icon}
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </ScrollReveal>
+
           </div>
         </div>
       </ScrollReveal>
@@ -133,14 +136,23 @@ export function About() {
             Experience
           </p>
 
-          <div className="flex flex-col gap-6 sm:flex-row sm:gap-0">
+          <div className="relative mb-6 flex items-center">
+            <div className="absolute -left-16 -right-16 border-t border-dashed border-zinc-400" />
+            <div className="relative flex w-full justify-between px-2">
+              {EXPERIENCES.map((_, i) => (
+                <div key={i} className="z-10 h-4 w-4 rounded-full bg-zinc-700" />
+              ))}
+            </div>
+          </div>
+
+          <div className="flex justify-between px-2">
             {EXPERIENCES.map(({ year, title, subtitle, detail }, i) => (
-              <ScrollReveal key={i} delay={0.1 + i * 0.15} className="flex-1">
-                <div className={`border-l-2 border-zinc-200 pl-4 ${i === 1 ? "sm:border-l-0 sm:border-r-2 sm:pl-0 sm:pr-4 sm:text-right" : ""}`}>
-                  <p className="text-xs text-zinc-400" style={{ fontFamily: HELVETICA }}>{year}</p>
-                  <p className="text-lg font-bold text-zinc-900" style={{ fontFamily: HELVETICA }}>{title}</p>
-                  <p className="text-sm text-zinc-500" style={{ fontFamily: HELVETICA }}>{subtitle}</p>
-                  <p className="text-xs text-zinc-400" style={{ fontFamily: HELVETICA }}>{detail}</p>
+              <ScrollReveal key={i} delay={0.1 + i * 0.15}>
+                <div className={i === 1 ? "text-right" : "text-left"}>
+                  <p className="text-sm text-zinc-400" style={{ fontFamily: HELVETICA }}>{year}</p>
+                  <p className="text-xl font-bold text-zinc-900" style={{ fontFamily: HELVETICA }}>{title}</p>
+                  <p className="text-base text-zinc-500" style={{ fontFamily: HELVETICA }}>{subtitle}</p>
+                  <p className="text-sm text-zinc-400" style={{ fontFamily: HELVETICA }}>{detail}</p>
                 </div>
               </ScrollReveal>
             ))}

@@ -75,7 +75,7 @@ export function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className={cn(
-          "fixed top-4 left-6 z-40 transition-opacity duration-300",
+          "fixed top-8 left-10 z-40 transition-opacity duration-300",
           scrolled ? "opacity-100" : "opacity-60"
         )}
       >
@@ -95,7 +95,7 @@ export function Navbar() {
         transition={{ duration: 0.5, delay: 0.1 }}
         onClick={() => setMenuOpen(true)}
         aria-label="Open menu"
-        className="fixed top-4 right-6 z-40 flex flex-col justify-center gap-[5px] p-1 group"
+        className="fixed top-8 right-10 z-40 flex flex-col justify-center gap-[5px] p-1 group"
       >
         <span className="block h-[2px] w-6 bg-zinc-900 transition-all duration-300 group-hover:w-4" />
         <span className="block h-[2px] w-6 bg-zinc-900" />

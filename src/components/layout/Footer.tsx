@@ -1,29 +1,31 @@
-import { SOCIAL_LINKS } from "@/lib/constants";
+import Image from "next/image";
+
+const HELVETICA = "Helvetica, 'Helvetica Neue', Arial, sans-serif";
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-zinc-200 px-6 py-10">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
-        <p className="font-mono text-xs text-zinc-400">
-          © {year} hans.dev — built with Next.js &amp; framer-motion
+    <footer className="overflow-hidden">
+      <div className="px-6 pt-8 pb-4">
+        <p
+          className="text-center text-xs text-zinc-400"
+          style={{ fontFamily: HELVETICA }}
+        >
+          © {year} Hans Thobie Sachio. All rights reserved.
         </p>
+      </div>
 
-        <ul className="flex items-center gap-6">
-          {SOCIAL_LINKS.map(({ label, href }) => (
-            <li key={label}>
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-mono text-xs text-zinc-400 uppercase tracking-widest transition-colors hover:text-zinc-900"
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <div className="relative overflow-hidden h-[30vw]">
+        <Image
+          src="/icon/logo_black.png"
+          alt="Hans"
+          width={1920}
+          height={480}
+          className="w-full h-auto"
+          priority={false}
+        />
+        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-b from-transparent to-white" />
       </div>
     </footer>
   );

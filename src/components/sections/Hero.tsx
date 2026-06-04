@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BlurText, MagneticButton } from "@/components/ui";
+import { BlurText, MagneticButton, SplitText } from "@/components/ui";
+
 
 const HELVETICA = "Helvetica, 'Helvetica Neue', Arial, sans-serif";
 
@@ -31,15 +32,19 @@ export function Hero() {
       </p>
 
       <div className="relative flex justify-center">
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
+        <SplitText
+          text="CREATIVE"
           className="select-none text-[15vw] font-black leading-none tracking-tighter text-zinc-900"
           style={{ fontFamily: HELVETICA }}
-        >
-          CREATIVE
-        </motion.h1>
+          delay={60}
+          duration={0.8}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="0px"
+        />
 
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="flex items-end" style={{ gap: "1.2vw" }}>

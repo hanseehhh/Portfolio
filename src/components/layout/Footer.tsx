@@ -4,9 +4,9 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 px-6 py-10">
+    <footer className="border-t border-zinc-200 px-6 py-10">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
-        <p className="font-mono text-xs text-zinc-500">
+        <p className="font-mono text-xs text-zinc-400">
           © {year} hans.dev — built with Next.js &amp; framer-motion
         </p>
 
@@ -17,7 +17,7 @@ export function Footer() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs text-zinc-500 uppercase tracking-widest transition-colors hover:text-white"
+                className="font-mono text-xs text-zinc-400 uppercase tracking-widest transition-colors hover:text-zinc-900"
               >
                 {label}
               </a>

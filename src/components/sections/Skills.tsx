@@ -16,13 +16,13 @@ export function Skills() {
     <section id="skills" className="px-6 py-32">
       <div className="mx-auto max-w-5xl">
         <ScrollReveal>
-          <p className="mb-4 font-mono text-xs tracking-[0.3em] text-zinc-500 uppercase">
+          <p className="mb-4 font-mono text-xs tracking-[0.3em] text-zinc-400 uppercase">
             03. Stack
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <h2 className="mb-16 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="mb-16 text-3xl font-bold text-zinc-900 sm:text-4xl">
             <AnimatedText text="Technologies I work with" variant="word" />
           </h2>
         </ScrollReveal>
@@ -33,7 +33,7 @@ export function Skills() {
             return (
               <ScrollReveal key={key} delay={ci * 0.1}>
                 <div>
-                  <p className="mb-4 font-mono text-xs tracking-widest text-zinc-600 uppercase">
+                  <p className="mb-4 font-mono text-xs tracking-widest text-zinc-400 uppercase">
                     {label}
                   </p>
                   <ul className="flex flex-wrap gap-3">
@@ -45,7 +45,7 @@ export function Skills() {
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.05 + ci * 0.1, duration: 0.3 }}
                         whileHover={{ scale: 1.05 }}
-                        className="rounded-lg border border-white/10 bg-white/[0.03] px-4 py-2 font-mono text-sm text-zinc-300 transition-colors hover:border-white/20 hover:text-white"
+                        className="rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-2 font-mono text-sm text-zinc-600 transition-colors hover:border-zinc-300 hover:text-zinc-900"
                       >
                         {skill.name}
                       </motion.li>

@@ -8,9 +8,9 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/hanseehhh", icon: "github" },
-  { label: "LinkedIn", href: "#", icon: "linkedin" },
-  { label: "Email", href: "mailto:your@email.com", icon: "mail" },
+  { label: "GitHub", href: "https://github.com/hanseehhh" },
+  { label: "LinkedIn", href: "#" },
+  { label: "Email", href: "mailto:your@email.com" },
 ];
 
 export const PROJECTS: Project[] = [

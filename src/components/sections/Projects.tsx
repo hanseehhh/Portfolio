@@ -11,13 +11,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       <motion.article
         whileHover={{ y: -4 }}
         transition={{ duration: 0.2 }}
-        className="group relative flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-white/20 hover:bg-white/[0.05]"
+        className="group relative flex flex-col gap-4 rounded-2xl border border-zinc-200 bg-white p-6 transition-colors hover:border-zinc-300 hover:bg-zinc-50"
       >
         <div className="flex items-start justify-between gap-4">
           <div className="flex flex-col gap-1">
-            <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+            <h3 className="text-lg font-semibold text-zinc-900">{project.title}</h3>
             {project.featured && (
-              <span className="inline-block w-fit rounded-full bg-white/10 px-2 py-0.5 font-mono text-[10px] tracking-widest text-zinc-400 uppercase">
+              <span className="inline-block w-fit rounded-full bg-zinc-100 px-2 py-0.5 font-mono text-[10px] tracking-widest text-zinc-500 uppercase">
                 featured
               </span>
             )}
@@ -29,7 +29,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 href={project.repo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs text-zinc-500 transition-colors hover:text-white"
+                className="font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-900"
                 aria-label="GitHub repo"
               >
                 repo ↗
@@ -40,7 +40,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs text-zinc-500 transition-colors hover:text-white"
+                className="font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-900"
                 aria-label="Live site"
               >
                 live ↗
@@ -49,13 +49,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
         </div>
 
-        <p className="text-sm leading-relaxed text-zinc-400">{project.description}</p>
+        <p className="text-sm leading-relaxed text-zinc-500">{project.description}</p>
 
         <ul className="flex flex-wrap gap-2">
           {project.tech.map((t) => (
             <li
               key={t}
-              className="rounded-md border border-white/10 px-2 py-1 font-mono text-[11px] text-zinc-500"
+              className="rounded-md border border-zinc-200 bg-zinc-50 px-2 py-1 font-mono text-[11px] text-zinc-500"
             >
               {t}
             </li>
@@ -71,13 +71,13 @@ export function Projects() {
     <section id="projects" className="px-6 py-32">
       <div className="mx-auto max-w-5xl">
         <ScrollReveal>
-          <p className="mb-4 font-mono text-xs tracking-[0.3em] text-zinc-500 uppercase">
+          <p className="mb-4 font-mono text-xs tracking-[0.3em] text-zinc-400 uppercase">
             02. Work
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <h2 className="mb-16 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="mb-16 text-3xl font-bold text-zinc-900 sm:text-4xl">
             <AnimatedText text="Selected projects" variant="word" />
           </h2>
         </ScrollReveal>

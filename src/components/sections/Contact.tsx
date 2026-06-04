@@ -9,19 +9,19 @@ export function Contact() {
     <section id="contact" className="px-6 py-32">
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 text-center">
         <ScrollReveal>
-          <p className="font-mono text-xs tracking-[0.3em] text-zinc-500 uppercase">
+          <p className="font-mono text-xs tracking-[0.3em] text-zinc-400 uppercase">
             04. Contact
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <h2 className="text-4xl font-bold text-white sm:text-6xl">
+          <h2 className="text-4xl font-bold text-zinc-900 sm:text-6xl">
             <AnimatedText text="Let's work together" variant="word" className="justify-center" />
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <p className="max-w-md text-base leading-relaxed text-zinc-400">
+          <p className="max-w-md text-base leading-relaxed text-zinc-500">
             I&apos;m currently open to new opportunities. Whether you have a project in mind,
             want to collaborate, or just want to say hi — my inbox is always open.
           </p>
@@ -31,7 +31,7 @@ export function Contact() {
           <MagneticButton
             as="a"
             href="mailto:your@email.com"
-            className="border border-white/20 bg-white text-black hover:bg-zinc-200"
+            className="bg-zinc-900 text-white hover:bg-zinc-700"
             strength={0.4}
           >
             Say Hello →
@@ -47,7 +47,7 @@ export function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ y: -2 }}
-                  className="font-mono text-xs tracking-widest text-zinc-500 uppercase transition-colors hover:text-white"
+                  className="font-mono text-xs tracking-widest text-zinc-400 uppercase transition-colors hover:text-zinc-900"
                 >
                   {label}
                 </motion.a>

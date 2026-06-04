@@ -5,14 +5,12 @@ export interface Project {
   tech: string[];
   href?: string;
   repo?: string;
-  image?: string;
   featured?: boolean;
 }
 
 export interface Skill {
   name: string;
-  category: "frontend" | "backend" | "tools" | "other";
-  level?: number;
+  category: "frontend" | "backend" | "tools";
 }
 
 export interface NavLink {
@@ -23,5 +21,4 @@ export interface NavLink {
 export interface SocialLink {
   label: string;
   href: string;
-  icon: string;
 }

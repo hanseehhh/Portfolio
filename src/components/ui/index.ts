@@ -1,4 +1,5 @@
 export { AnimatedText } from "./AnimatedText";
-export { GlitchText } from "./GlitchText";
+export { BlurText } from "./BlurText";
 export { MagneticButton } from "./MagneticButton";
 export { ScrollReveal } from "./ScrollReveal";
+export { SplashCursor } from "./SplashCursor";

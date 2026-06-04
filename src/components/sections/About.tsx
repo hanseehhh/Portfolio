@@ -5,7 +5,7 @@ export function About() {
     <section id="about" className="px-6 py-32">
       <div className="mx-auto max-w-5xl">
         <ScrollReveal direction="up">
-          <p className="mb-4 font-mono text-xs tracking-[0.3em] text-zinc-500 uppercase">
+          <p className="mb-4 font-mono text-xs tracking-[0.3em] text-zinc-400 uppercase">
             01. About
           </p>
         </ScrollReveal>
@@ -13,13 +13,13 @@ export function About() {
         <div className="grid gap-16 md:grid-cols-2">
           <div className="flex flex-col gap-6">
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl font-bold text-white sm:text-4xl">
+              <h2 className="text-3xl font-bold text-zinc-900 sm:text-4xl">
                 <AnimatedText text="A bit about me" variant="word" />
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <p className="text-base leading-relaxed text-zinc-400">
+              <p className="text-base leading-relaxed text-zinc-500">
                 I&apos;m a developer based in Indonesia, passionate about crafting digital
                 experiences that combine clean code with thoughtful design. I focus on
                 performance, accessibility, and the tiny details that make products feel great.
@@ -27,7 +27,7 @@ export function About() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <p className="text-base leading-relaxed text-zinc-400">
+              <p className="text-base leading-relaxed text-zinc-500">
                 When I&apos;m not building things, you&apos;ll find me exploring new tech,
                 contributing to open source, or obsessing over typography.
               </p>
@@ -35,7 +35,7 @@ export function About() {
           </div>
 
           <ScrollReveal delay={0.2} direction="left">
-            <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/10">
+            <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-zinc-200 bg-zinc-200">
               {[
                 { label: "Projects shipped", value: "10+" },
                 { label: "Years of experience", value: "2+" },
@@ -44,10 +44,10 @@ export function About() {
               ].map(({ label, value }) => (
                 <div
                   key={label}
-                  className="flex flex-col gap-1 bg-white/[0.03] p-6 transition-colors hover:bg-white/[0.06]"
+                  className="flex flex-col gap-1 bg-white p-6 transition-colors hover:bg-zinc-50"
                 >
-                  <span className="text-2xl font-bold text-white">{value}</span>
-                  <span className="text-xs text-zinc-500">{label}</span>
+                  <span className="text-2xl font-bold text-zinc-900">{value}</span>
+                  <span className="text-xs text-zinc-400">{label}</span>
                 </div>
               ))}
             </div>

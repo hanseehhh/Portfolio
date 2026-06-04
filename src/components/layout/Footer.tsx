@@ -7,7 +7,7 @@ export function Footer() {
 
   return (
     <footer className="overflow-hidden">
-      <div className="px-6 pt-8 pb-4">
+      <div className="px-6 pt-6 pb-1">
         <p
           className="text-center text-xs text-zinc-400"
           style={{ fontFamily: HELVETICA }}
@@ -16,7 +16,7 @@ export function Footer() {
         </p>
       </div>
 
-      <div className="relative overflow-hidden h-[30vw]">
+      <div className="relative overflow-hidden h-[32vh]">
         <Image
           src="/icon/logo_black.png"
           alt="Hans"

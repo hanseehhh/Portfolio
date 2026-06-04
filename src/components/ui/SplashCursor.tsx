@@ -115,13 +115,13 @@ export function SplashCursor() {
     const config = {
       SIM_RESOLUTION: 128,
       DYE_RESOLUTION: 1440,
-      DENSITY_DISSIPATION: 2,
-      VELOCITY_DISSIPATION: 2,
+      DENSITY_DISSIPATION: 4,
+      VELOCITY_DISSIPATION: 3,
       PRESSURE: 0.1,
       PRESSURE_ITERATIONS: 20,
-      CURL: 10,
-      SPLAT_RADIUS: 0.2,
-      SPLAT_FORCE: 4000,
+      CURL: 6,
+      SPLAT_RADIUS: 0.15,
+      SPLAT_FORCE: 2500,
       SHADING: true,
       COLOR_UPDATE_SPEED: 30,
       RAINBOW_MODE: false,
@@ -214,7 +214,7 @@ export function SplashCursor() {
           float diffuse=clamp(dot(n,vec3(0.,0.,1.))+0.7,0.7,1.0);
           c*=diffuse;
         #endif
-        float a=max(c.r,max(c.g,c.b))*0.25;
+        float a=max(c.r,max(c.g,c.b))*0.10;
         gl_FragColor=vec4(0.0,0.0,0.0,a);
       }
     `;
@@ -528,11 +528,7 @@ export function SplashCursor() {
       p.color=color;
     }
 
-    const onMouseDown = (e: MouseEvent) => {
-      updateDown(pointers[0],-1,scaleByDPR(e.clientX),scaleByDPR(e.clientY));
-      const c=genColor(); c.r*=10; c.g*=10; c.b*=10;
-      splat(pointers[0].texcoordX,pointers[0].texcoordY,10*(Math.random()-.5),30*(Math.random()-.5),c);
-    };
+    const onMouseDown = (_e: MouseEvent) => { /* click effect disabled */ };
     const onMouseMove = (e: MouseEvent) => {
       const color = firstMove ? pointers[0].color : genColor();
       firstMove=true;

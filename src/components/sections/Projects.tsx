@@ -33,6 +33,8 @@ const cardVariants = {
 };
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const cover = project.image ?? project.gallery?.[0];
+
   return (
     <motion.article
       custom={index}
@@ -42,14 +44,17 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
       variants={cardVariants}
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 320, damping: 38 }}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-shadow hover:shadow-md"
+      className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-shadow hover:shadow-md"
     >
+      {/* The whole card is one link, so there is no nested anchor inside it. */}
+      <Link href={`/projects/${project.slug}`} className="flex h-full flex-col">
       <div className="relative h-40 w-full overflow-hidden bg-zinc-100">
-        {project.image ? (
+        {cover ? (
           <Image
-            src={project.image}
+            src={cover}
             alt={project.title}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
@@ -83,11 +88,8 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           {project.description}
         </p>
 
-        <a
-          href={project.href ?? project.repo ?? "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-auto flex w-fit items-center gap-1.5 text-xs font-semibold text-zinc-900 transition-all hover:gap-2.5"
+        <span
+          className="mt-auto flex w-fit items-center gap-1.5 text-xs font-semibold text-zinc-900 transition-all group-hover:gap-2.5"
           style={{ fontFamily: HELVETICA }}
         >
           Read More
@@ -95,8 +97,9 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             <line x1="5" y1="12" x2="19" y2="12" />
             <polyline points="12 5 19 12 12 19" />
           </svg>
-        </a>
+        </span>
       </div>
+      </Link>
     </motion.article>
   );
 }
@@ -182,7 +185,7 @@ export function Projects() {
             className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
           >
             {sorted.map((project, i) => (
-              <ProjectCard key={project.id} project={project} index={i} />
+              <ProjectCard key={project.slug} project={project} index={i} />
             ))}
           </motion.div>
         </AnimatePresence>

@@ -53,18 +53,37 @@ const SOCIALS = [
   },
 ];
 
-const EXPERIENCES = [
+const EXPERIENCES: {
+  year: string;
+  title: string;
+  subtitle: string;
+  duration: string;
+  detail?: string;
+}[] = [
   {
-    year: "2023 - Recent",
+    year: "2023 - 2026",
     title: "Tarumanagara University",
     subtitle: "Technology Informatics Faculty",
+    duration: "3 years",
     detail: "GPA: 3.8/4.0",
   },
   {
-    year: "2025 - Recent",
+    year: "2024 - Recent",
+    title: "Vistora",
+    subtitle: "Head Team Developer",
+    duration: "2 years",
+  },
+  {
+    year: "2025 - 2027",
     title: "Yayasan Tarumanagara",
-    subtitle: "Front-End Developer Intern",
-    detail: "1 year",
+    subtitle: "Front-End Developer",
+    duration: "2 years",
+  },
+  {
+    year: "2026 - Recent",
+    title: "MTM Healthcare",
+    subtitle: "App Developer",
+    duration: "1 year",
   },
 ];
 
@@ -131,28 +150,40 @@ export function About() {
       </ScrollReveal>
 
       <ScrollReveal delay={0.2}>
-        <div className="mx-auto mt-16 w-full max-w-3xl px-2">
+        <div className="mx-auto mt-16 w-full max-w-[1400px]">
           <p className="mb-10 text-center text-xs font-semibold uppercase tracking-widest text-zinc-400" style={{ fontFamily: HELVETICA }}>
             Experience
           </p>
 
-          <div className="relative mb-6 flex items-center">
-            <div className="absolute -left-16 -right-16 border-t border-dashed border-zinc-400" />
-            <div className="relative flex w-full justify-between px-2">
-              {EXPERIENCES.map((_, i) => (
-                <div key={i} className="z-10 h-4 w-4 rounded-full bg-zinc-700" />
-              ))}
-            </div>
-          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {EXPERIENCES.map(({ year, title, subtitle, duration, detail }, i) => (
+              <ScrollReveal key={i} delay={0.1 + i * 0.15} className="h-full">
+                <div className="flex h-full flex-col rounded-2xl border border-zinc-200 bg-zinc-50 p-6 transition-colors duration-300 hover:border-zinc-400 hover:bg-white">
+                  <span
+                    className="w-fit rounded-md border border-zinc-200 bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-zinc-500"
+                    style={{ fontFamily: HELVETICA }}
+                  >
+                    {year}
+                  </span>
 
-          <div className="flex justify-between px-2">
-            {EXPERIENCES.map(({ year, title, subtitle, detail }, i) => (
-              <ScrollReveal key={i} delay={0.1 + i * 0.15}>
-                <div className={i === 1 ? "text-right" : "text-left"}>
-                  <p className="text-sm text-zinc-400" style={{ fontFamily: HELVETICA }}>{year}</p>
-                  <p className="text-xl font-bold text-zinc-900" style={{ fontFamily: HELVETICA }}>{title}</p>
-                  <p className="text-base text-zinc-500" style={{ fontFamily: HELVETICA }}>{subtitle}</p>
-                  <p className="text-sm text-zinc-400" style={{ fontFamily: HELVETICA }}>{detail}</p>
+                  <h3
+                    className="mt-4 text-lg font-bold leading-snug text-zinc-900 sm:text-xl"
+                    style={{ fontFamily: HELVETICA }}
+                  >
+                    {title}
+                  </h3>
+                  <p
+                    className="mt-1.5 text-sm text-zinc-500 sm:text-base"
+                    style={{ fontFamily: HELVETICA }}
+                  >
+                    {subtitle}
+                  </p>
+
+                  <p className="mt-auto pt-4 text-sm text-zinc-400" style={{ fontFamily: HELVETICA }}>
+                    {duration}
+                    {detail && <span className="text-zinc-300"> · </span>}
+                    {detail}
+                  </p>
                 </div>
               </ScrollReveal>
             ))}
